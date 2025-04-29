@@ -1,30 +1,92 @@
-# React + TypeScript + Vite
+# Dynamic Form Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based application that allows students to log in, register, and fill out dynamically generated forms with section-based navigation and validation.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Simple login/registration with name and roll number
+- **Dynamic Form Rendering**: Forms are generated dynamically based on API response
+- **Multi-Section Navigation**: Forms are divided into sections with previous/next navigation
+- **Validation**: Field validation based on API specifications (required, minLength, maxLength)
+- **Section Validation**: Each section is validated separately before advancing
+- **Multiple Input Types**: Support for text, email, date, textarea, dropdown, radio, checkbox inputs
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Tailwind CSS for styling
 
-- Configure the top-level `parserOptions` property like this:
+## 📋 Project Structure
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
+```
+/src
+  /components
+    - Login.tsx               # Student login component
+    - DynamicForm.tsx         # Main form container component
+    - FormSectionComponent.tsx # Individual section renderer
+    - FormField.tsx           # Dynamic field renderer
+  - App.tsx                   # Main application component
+  - api.ts                    # API service for backend communication
+  - mockApi.ts                # Mock API service for development
+  - types.ts                  # TypeScript interfaces and types
+  - index.tsx                 # Application entry point
+  - index.css                 # Global styles
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🔧 Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/dynamic-form-app.git
+   cd dynamic-form-app
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Configure the API endpoint:
+   - Open `src/api.ts` and update the `API_BASE_URL` to your API endpoint
+   - For development, you can use the included mock API in `mockApi.ts`
+
+4. Start the development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
+## ✅ Features Implemented
+
+- [x] User login and registration
+- [x] Dynamic form structure
+- [x] Section-based navigation
+- [x] Field validation based on requirements
+- [x] Support for multiple field types
+- [x] Form submission handling
+
+## 🔮 Future Improvements
+
+- [ ] Add form progress indicator
+- [ ] Implement form data saving (local storage)
+- [ ] Add animation for section transitions
+- [ ] Implement form submission to backend
+- [ ] Add form error summary
+- [ ] Add internationalization support
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
